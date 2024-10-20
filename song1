@@ -1,0 +1,30 @@
+public class Song {
+    private String title; // Judul lagu
+    private Song next;   // Referensi ke lagu berikutnya
+
+    // Konstruktor
+    public Song(String title) {
+        this.title = title;
+        this.next = null; // Awalnya, next adalah null
+    }
+
+    // Getter untuk title
+    public String getTitle() {
+        return title;
+    }
+
+    // Setter untuk title
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    // Getter untuk next
+    public Song getNext() {
+        return next;
+    }
+
+    // Setter untuk next
+    public void setNext(Song next) {
+        this.next = next;
+    }
+}
