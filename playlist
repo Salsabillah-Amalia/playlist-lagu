@@ -1,0 +1,31 @@
+public class Playlist {
+    private Song head; // Referensi ke lagu pertama dalam playlist
+
+    // Metode untuk menambah lagu di akhir playlist
+    public void addSong(String title) {
+        Song newSong = new Song(title);
+        if (head == null) {
+            head = newSong; // Jika playlist kosong, tambahkan lagu pertama
+        } else {
+            Song current = head;
+            while (current.getNext() != null) {
+                current = current.getNext(); // Cari lagu terakhir
+            }
+            current.setNext(newSong); // Tambahkan lagu baru di akhir
+        }
+    }
+
+    // Metode untuk menampilkan semua lagu dalam playlist
+    public void displayPlaylist() {
+        if (head == null) {
+            System.out.println("Playlist kosong.");
+            return;
+        }
+
+        Song current = head;
+        while (current != null) {
+            System.out.println(current.getTitle());
+            current = current.getNext(); // Pindah ke lagu berikutnya
+        }
+    }
+}
